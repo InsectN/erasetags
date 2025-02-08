@@ -1,0 +1,15 @@
+
+body {
+    width: 300px;
+}
+
+.add_action {
+    background:gray;
+    filter: brightness(80%);
+    color:#fff;
+    padding: 3px;
+    border-radius:3px;
+}
+.add_action:hover {
+    filter: brightness(100%);
+}

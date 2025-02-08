@@ -1,0 +1,21 @@
+{
+    "name"              : "自動タグ削除",
+    "version"           : "1.0.0",
+    "description"       : "WEBサイト上の邪魔なボタン、文字表示を削除する拡張可能なツール",
+    "manifest_version"  : 3,
+
+    "permissions": ["activeTab", "storage"],
+    "icons": {
+        "32" : "icon/icon32.png",
+        "128": "icon/icon128.png"
+    },
+    "action": {
+        "default_icon" : {"32": "icon/icon32.png"},
+        "default_popup": "popup.html"
+    },
+    "content_scripts"   : [
+        {
+            "js": ["js/storage.js", "js/content.js"]
+        }
+    ]
+}
