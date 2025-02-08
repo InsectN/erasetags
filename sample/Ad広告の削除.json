@@ -1,0 +1,61 @@
+{
+    "title": "Ad広告の削除",
+    "enabled"     : true,
+    "url": [".*"],
+    "timeout"       : true,
+    "timeoutSecond" : 3,
+    "toRepeat"    : true,
+    "repeatSecond": 15,
+    "process": [
+        {
+            "category"  : "get",
+            "method"    : "class",
+            "property"  : "adsbygoogle",
+            "under": [
+                {
+                    "category"  : "erase",
+                    "method"    : "outerHtml",
+                    "property"  : ""
+                }
+            ]
+        },
+        {
+            "category"  : "get",
+            "method"    : "tag",
+            "property"  : "iframe",
+            "under": [
+                {
+                    "category"  : "regular",
+                    "method"    : "id",
+                    "property"  : ["google_ads_iframe_.*", ".*_ad_frame", "ysp", "ydn-top"],
+                    "under": [
+                        {
+                            "category"  : "erase",
+                            "method"    : "outerHtml",
+                            "property"    : ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category"  : "get",
+            "method"    : "tag",
+            "property"  : "div",
+            "under": [
+                {
+                    "category"  : "regular",
+                    "method"    : "id",
+                    "property"  : ["google_ads_iframe_.*", ".*_ad_frame", "ysp", "ydn-top"],
+                    "under": [
+                        {
+                            "category"  : "erase",
+                            "method"    : "outerHtml",
+                            "property"    : ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

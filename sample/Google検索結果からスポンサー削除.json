@@ -1,0 +1,24 @@
+
+{
+    "title": "Google検索結果からスポンサー削除",
+    "enabled"     : true,
+    "url": ["^https://www.google.com/search"],
+    "timeout"       : true,
+    "timeoutSecond" : 3,
+    "toRepeat"    : false,
+    "repeatSecond": 10,
+    "process": [
+        {
+            "category"  : "get",
+            "method"    : "id",
+            "property"  : "tvcap",
+            "under": [
+                {
+                    "category"  : "erase",
+                    "method"    : "innerHtml",
+                    "property"  : ""
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "title": "Twitter(X)広告の削除",
+    "enabled"     : true,
+    "url": ["https://twitter.com/", "https://x.com/"],
+    "timeout"       : true,
+    "timeoutSecond" : 3,
+    "toRepeat"    : true,
+    "repeatSecond": 30,
+    "process": [
+        {
+            "category": "get", "method": "tag", "property": "main",
+            "under": [
+                {
+                    "category": "get", "method": "tag", "property": "div",
+                    "under": [
+                        {
+                            "category": "attr", "method": "data-testid", "property": "primaryColumn",
+                            "under": [
+                                {
+                                    "category": "get", "method": "tag", "property": "article",
+                                    "under": [
+                                        {
+                                            "category": "attr", "method": "data-testid", "property": "tweet",
+                                            "under": [
+                                                {
+                                                    "label": "tweet",
+                                                    "category": "get", "method": "tag", "property": "span",
+                                                    "under": [
+                                                        {
+                                                            "category": "regular", "method": "innerHtml", "property": ["プロモーション"],
+                                                            "under": [
+                                                                {
+                                                                    "goto": "tweet",
+                                                                    "category": "erase", "method": "height", "property": "5px"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
