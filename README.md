@@ -12,7 +12,7 @@ Yahoo表示時、以下のタイミングで mainタグ内を全消去
 {
     "title"  : "サンプル",
     "enabled": true,
-    "url": ["^https://www\.yahoo\.co\.jp/"],
+    "url": ["^https://www\\.yahoo\\.co\\.jp/"],
     "timeout"       : true,
     "timeoutSecond" : 3,
     "toRepeat"    : false,
